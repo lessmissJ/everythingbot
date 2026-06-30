@@ -4,7 +4,12 @@ from discord import app_commands
 from discord.ext import commands
 from pathlib import Path
 
-TEMPLATE_PATH = Path("templates/recruit.json")
+# =====================================================================
+# 🛠️ 수정된 부분: 현재 파일(recruit.py)의 위치를 기준으로 templates 폴더를 찾습니다.
+# =====================================================================
+BASE_DIR = Path(__file__).resolve().parent.parent  # cogs 폴더의 상위 폴더(AcornBot-main)로 이동
+TEMPLATE_PATH = BASE_DIR / "templates" / "recruit.json"
+# =====================================================================
 
 
 def load_template() -> dict:
